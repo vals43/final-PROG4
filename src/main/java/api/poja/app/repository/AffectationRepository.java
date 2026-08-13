@@ -14,5 +14,6 @@ public interface AffectationRepository extends JpaRepository<Affectation, String
 
   List<Affectation> findByTeacherId(String teacherId);
 
-  Optional<Affectation> findByCoursIdAndGroupeIdAndAnnee(String coursId, String groupeId, Integer annee);
+  Optional<Affectation> findByCoursIdAndGroupeIdAndAnnee(
+      String coursId, String groupeId, Integer annee);
 }
