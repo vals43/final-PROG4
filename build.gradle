@@ -128,6 +128,8 @@ dependencies {
     implementation 'software.amazon.awssdk:ses:2.21.40'
     implementation 'software.amazon.awssdk:core:2.21.40'
 
+    implementation 'org.postgresql:postgresql:42.7.12'
+
     implementation 'jakarta.mail:jakarta.mail-api:2.1.2'
     implementation 'jakarta.activation:jakarta.activation-api:2.1.2'
     implementation 'com.sun.mail:jakarta.mail:2.0.1'
