@@ -36,6 +36,7 @@ public class NoteService {
     return noteRepository.findByStudentId(studentId);
   }
 
+  @Transactional(readOnly = true)
   public List<NoteViewDto> viewByStudentId(String studentId) {
     return listByStudentId(studentId).stream().map(this::toView).sorted(comparator()).toList();
   }

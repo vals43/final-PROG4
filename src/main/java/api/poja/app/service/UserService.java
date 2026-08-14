@@ -66,12 +66,14 @@ public class UserService {
             other -> {
               throw new ConflictException("Email déjà utilisé: " + dto.email());
             });
-    existing.setStd(dto.std());
     existing.setNom(dto.nom());
     existing.setPrenom(dto.prenom());
     existing.setEmail(dto.email());
     existing.setRole(dto.role());
     existing.setParcours(dto.parcours());
+    if (dto.std() != null) {
+      existing.setStd(dto.std());
+    }
     return userRepository.save(existing);
   }
 
