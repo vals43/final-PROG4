@@ -50,7 +50,21 @@ jacocoTestCoverageVerification {
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
-                    "**/gen/**"
+                    "**/gen/**",
+                    "**/PojaApplication.*",
+                    "**/PojaGenerated.*",
+                    "**/concurrency/**",
+                    "**/datastructure/**",
+                    "**/endpoint/event/**",
+                    "**/endpoint/rest/controller/health/**",
+                    "**/endpoint/EndpointConf.*",
+                    "**/endpoint/RequestLoggerConfigurer.*",
+                    "**/file/**",
+                    "**/handler/**",
+                    "**/mail/**",
+                    "**/service/event/**",
+                    "**/HelloWorldController.*",
+                    "**/SchoolDataSeeder.*"
             ])
         }))
     }
@@ -58,7 +72,7 @@ jacocoTestCoverageVerification {
         rule {
             limit {
                 counter = "LINE"
-                minimum = 0
+                minimum = 0.8
             }
         }
     }
@@ -75,7 +89,21 @@ jacocoTestReport {
         // else display coverageRate is inconsistent with what was computed during coverage...
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
-                    "**/gen/**"
+                    "**/gen/**",
+                    "**/PojaApplication.*",
+                    "**/PojaGenerated.*",
+                    "**/concurrency/**",
+                    "**/datastructure/**",
+                    "**/endpoint/event/**",
+                    "**/endpoint/rest/controller/health/**",
+                    "**/endpoint/EndpointConf.*",
+                    "**/endpoint/RequestLoggerConfigurer.*",
+                    "**/file/**",
+                    "**/handler/**",
+                    "**/mail/**",
+                    "**/service/event/**",
+                    "**/HelloWorldController.*",
+                    "**/SchoolDataSeeder.*"
             ])
         }))
     }
