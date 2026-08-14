@@ -10,4 +10,5 @@ public record NoteDto(
     String id,
     @NotBlank String studentId,
     @NotBlank String examenId,
+    @NotBlank String inscriptionId,
     @NotNull @DecimalMin("0.00") @DecimalMax("20.00") BigDecimal valeur) {}
