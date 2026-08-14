@@ -23,11 +23,14 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
+@Profile("!test")
 @AllArgsConstructor
 public class SchoolDataSeeder implements CommandLineRunner {
   private static final List<String> COURSE_REFS =
@@ -44,6 +47,7 @@ public class SchoolDataSeeder implements CommandLineRunner {
   private final ExamenRepository examenRepository;
   private final AffectationRepository affectationRepository;
   private final InscriptionRepository inscriptionRepository;
+  private final PasswordEncoder passwordEncoder;
 
   @Override
   @Transactional
@@ -126,7 +130,7 @@ public class SchoolDataSeeder implements CommandLineRunner {
         .nom(nom)
         .prenom(prenom)
         .email(email)
-        .password("password123")
+        .password(passwordEncoder.encode("password123"))
         .role(role)
         .parcours(parcours)
         .build();
