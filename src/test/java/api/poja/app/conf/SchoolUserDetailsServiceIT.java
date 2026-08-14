@@ -12,8 +12,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.ActiveProfiles;
 
-public class SchoolUserDetailsServiceIT extends PostgresIT {
+@ActiveProfiles("test")
+public class SchoolUserDetailsServiceIT extends FacadeIT {
 
   @Autowired UserRepository userRepository;
 
